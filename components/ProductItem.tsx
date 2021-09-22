@@ -8,8 +8,8 @@ interface ProductItemProps {
 
 export function ProductItem({ product }: ProductItemProps) {
   return (
-    <div>
-      { product.title } = <strong>{ String(product.price).replace('.', ',') }</strong>
+    <div className="product-item">
+      { product.title } = <strong>R$ { String(product.price).replace('.', ',') }</strong>
     </div>
   )
 }
