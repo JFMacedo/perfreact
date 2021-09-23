@@ -11,7 +11,7 @@ interface ProductItemProps {
 function ProductItemComponent({ product }: ProductItemProps) {
   return (
     <div className="product-item">
-      { product.title } = <strong>R$ { String(product.price).replace('.', ',') }</strong>
+      { product.title } = <strong>R$ { String(product.price.toFixed(2)).replace('.', ',') }</strong>
     </div>
   )
 }
