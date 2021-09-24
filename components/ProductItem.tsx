@@ -6,12 +6,14 @@ interface ProductItemProps {
     price: number
     title: string
   }
+  onAddToWishList: (id: number) => void
 }
 
-function ProductItemComponent({ product }: ProductItemProps) {
+function ProductItemComponent({ product, onAddToWishList }: ProductItemProps) {
   return (
-    <div className="product-item">
+    <div>
       { product.title } = <strong>R$ { String(product.price.toFixed(2)).replace('.', ',') }</strong>
+      <button onClick={ () => (onAddToWishList(product.id)) }>Add to wishlist</button>
     </div>
   )
 }
